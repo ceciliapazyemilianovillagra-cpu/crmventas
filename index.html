@@ -1144,6 +1144,194 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
     }
+
+    /* Legibilidad y desplazamiento para pantallas de cualquier altura */
+    html, body {
+      height: 100%;
+      overflow: hidden;
+    }
+    body { font-size: 15px; }
+    .login-screen {
+      width: 100%;
+      height: 100dvh;
+      min-height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-gutter: stable;
+    }
+    .login-shell { flex: none; }
+    .app-shell {
+      height: 100dvh;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .workspace {
+      height: calc(100dvh - 24px);
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .topbar { flex: 0 0 auto; }
+    .main {
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-gutter: stable;
+    }
+    .sidebar {
+      min-height: 0;
+      overflow: hidden;
+    }
+    .nav-list {
+      min-height: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-gutter: stable;
+      padding-right: 3px;
+    }
+    .sidebar-bottom { flex: 0 0 auto; }
+    .kanban, .table-wrap, .pipeline-summary {
+      scrollbar-gutter: stable;
+      scrollbar-width: thin;
+      scrollbar-color: #b9afd7 transparent;
+    }
+    .main, .nav-list, .modal-body, .login-screen {
+      scrollbar-width: thin;
+      scrollbar-color: #aaa0c9 transparent;
+    }
+    .main::-webkit-scrollbar,
+    .nav-list::-webkit-scrollbar,
+    .modal-body::-webkit-scrollbar,
+    .login-screen::-webkit-scrollbar {
+      width: 10px;
+    }
+    .kanban::-webkit-scrollbar,
+    .table-wrap::-webkit-scrollbar,
+    .pipeline-summary::-webkit-scrollbar {
+      height: 10px;
+    }
+    .main::-webkit-scrollbar-thumb,
+    .nav-list::-webkit-scrollbar-thumb,
+    .modal-body::-webkit-scrollbar-thumb,
+    .login-screen::-webkit-scrollbar-thumb,
+    .kanban::-webkit-scrollbar-thumb,
+    .table-wrap::-webkit-scrollbar-thumb,
+    .pipeline-summary::-webkit-scrollbar-thumb {
+      border: 2px solid transparent;
+      border-radius: 999px;
+      background: #aaa0c9;
+      background-clip: padding-box;
+    }
+    .main::-webkit-scrollbar-track,
+    .nav-list::-webkit-scrollbar-track,
+    .modal-body::-webkit-scrollbar-track,
+    .login-screen::-webkit-scrollbar-track,
+    .kanban::-webkit-scrollbar-track,
+    .table-wrap::-webkit-scrollbar-track,
+    .pipeline-summary::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .btn { font-size: 14px; }
+    .btn-sm { font-size: 12px; }
+    .field label { font-size: 13px; }
+    .field small { font-size: 12px; }
+    input, select, textarea { font-size: 14px; }
+    .form-error { font-size: 13px; }
+    .login-form-wrap > p { font-size: 15px; }
+    .login-note { font-size: 12px; }
+    .nav-btn { font-size: 14px; }
+    .sidebar-caption { font-size: 11px; }
+    .install-card strong { font-size: 13px; }
+    .install-card span { font-size: 11px; }
+    .user-card strong { font-size: 13px; }
+    .user-card small { font-size: 11px; }
+    .topbar-title strong { font-size: 17px; }
+    .topbar-title span { font-size: 12px; }
+    .global-search input { font-size: 13px; }
+    .eyebrow { font-size: 11px; }
+    .page-head p:not(.eyebrow) { font-size: 14px; }
+    .metric-label { font-size: 12px; }
+    .metric-foot { font-size: 11px; }
+    .panel-head h2 { font-size: 16px; }
+    .panel-head p { font-size: 11px; }
+    .panel-link { font-size: 12px; }
+    .pipeline-step span { font-size: 10px; }
+    .pipeline-step strong { font-size: 14px; }
+    .bar-value, .bar-label { font-size: 10px; }
+    .agenda-item strong, .alert-item strong { font-size: 12px; }
+    .agenda-item span, .alert-item span { font-size: 10px; }
+    .agenda-time { font-size: 10px; }
+    .tag { font-size: 10px; }
+    .kanban-title { font-size: 13px; }
+    .kanban-count { font-size: 10px; }
+    .deal-card h3 { font-size: 13px; }
+    .deal-company { font-size: 10px; }
+    .deal-owner { font-size: 10px; }
+    .stage-select-mobile { font-size: 12px; }
+    .empty-column { font-size: 11px; }
+    .toolbar select { font-size: 13px; }
+    th { font-size: 11px; }
+    td { font-size: 12px; }
+    .person strong { font-size: 12px; }
+    .person span { font-size: 10px; }
+    .mobile-record h3 { font-size: 14px; }
+    .mobile-record p { font-size: 11px; }
+    .follow-column-head h2 { font-size: 14px; }
+    .follow-card strong { font-size: 12px; }
+    .follow-card span { font-size: 10px; }
+    .timeline-head strong { font-size: 12px; }
+    .timeline-head time { font-size: 10px; }
+    .timeline-body p { font-size: 12px; }
+    .quote-number { font-size: 11px; }
+    .quote-card h3 { font-size: 14px; }
+    .quote-card p { font-size: 11px; }
+    .quote-foot span { font-size: 10px; }
+    .seller-card-head strong { font-size: 13px; }
+    .seller-card-head span { font-size: 10px; }
+    .seller-stat span { font-size: 10px; }
+    .seller-stat strong { font-size: 14px; }
+    .empty-state h2 { font-size: 17px; }
+    .empty-state p { font-size: 12px; }
+    .modal-head p { font-size: 11px; }
+    .quote-summary-row { font-size: 12px; }
+    .quote-summary-row.total { font-size: 15px; }
+    .toast strong { font-size: 12px; }
+    .toast span { font-size: 10px; }
+
+    @media (max-width: 900px) {
+      .workspace { height: 100dvh; }
+      .sidebar { height: calc(100dvh - 20px); }
+      .main {
+        padding-bottom: max(30px, calc(env(safe-area-inset-bottom) + 18px));
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+    @media (max-width: 720px) {
+      .login-screen {
+        height: 100dvh;
+        min-height: 0;
+        overflow-y: auto;
+      }
+      .login-shell { min-height: 100dvh; }
+      input, select, textarea { font-size: 16px; }
+      .metric-label { font-size: 11px; }
+      .quote-item .field label { font-size: 11px; }
+    }
+    @media (max-width: 520px) {
+      .metric-label { font-size: 11px; }
+      .metric-foot { display: flex; font-size: 10px; }
+    }
+    @media (max-height: 700px) {
+      .install-card { display: none; }
+      .sidebar-caption { margin-top: 18px; }
+      .login-brand, .login-form-wrap { padding-top: 30px; padding-bottom: 30px; }
+    }
   </style>
 </head>
 <body>
@@ -1244,7 +1432,7 @@
      * Pegá aquí la URL que termina en /exec después de implementar Code.gs
      * como Aplicación web en Google Apps Script.
      */
-    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzQ-aQE3kIedOB7IHJAsPz_UnjwjBYI_IZhHZXQql_VNlBcouIYSdrJTd27eQMU4RPOJA/exec';
+    const APPS_SCRIPT_URL = 'PEGA_AQUI_LA_URL_DE_TU_APLICACION_WEB';
 
     const STAGES = ['Nuevo', 'Contactado', 'Propuesta', 'Negociación', 'Ganado'];
     const ALL_STAGES = [...STAGES, 'Perdido'];
